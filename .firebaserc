@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "anime-scheduler-33e34": {
+      "hosting": {
+        "animeScheduler": [
+          "anime-scheduler-33e34"
+        ]
+      }
+    }
+  }
+}
