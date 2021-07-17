@@ -7,10 +7,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './modules/login/login.component';
+import { SeasonScheduleComponent } from './modules/season-schedule/season-schedule.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SeasonScheduleComponent
   ],
   imports: [
     BrowserModule,

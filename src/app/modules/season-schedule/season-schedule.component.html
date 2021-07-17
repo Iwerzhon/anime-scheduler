@@ -1,0 +1,11 @@
+<div *ngIf="getUser() as user">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <button (click)="debug()">Debug</button>
+    <!-- <ul>
+      <li class="text" *ngFor="let item of items | async">
+        {{item.mal_user}}
+      </li>
+    </ul> -->
+</div>
+<p>season-schedule works!</p>
+<button (click)="logout()">Logout</button>
