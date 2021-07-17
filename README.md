@@ -2,18 +2,18 @@
 
 ## Development guidelines
 
-pull a feature branch per US from master
+pull a feature branch per US from main
 
 ```
-git checkout master
+git checkout main
 git pull -r
 git checkout -b feature/myFeatureName
 # develop
 git commit -m "my feature"
-git checkout master
+git checkout main
 git pull -r
 git checkout -
-git rebase -i master
+git rebase -i main
 git push -f
 # merge request
 ```
