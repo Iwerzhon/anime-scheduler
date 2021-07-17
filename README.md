@@ -1,6 +1,23 @@
 # AnimeScheduler
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+## Development guidelines
+
+pull a feature branch per US from master
+
+```
+git checkout master
+git pull -r
+git checkout -b feature/myFeatureName
+# develop
+git commit -m "my feature"
+git checkout master
+git pull -r
+git checkout -
+git rebase -i master
+git push -f
+# merge request
+```
+
 
 ## Development server
 
