@@ -8,6 +8,7 @@ import { FirebaseService } from 'src/app/core/firebase.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
 
   constructor(
     private _firebaseAuthService: FirebaseService,
@@ -21,8 +22,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public login() {
-    this._firebaseAuthService.login();
+  public loginGoogle() {
+    this._firebaseAuthService.loginGoogle();
+  }
+
+  public loginEmail() {
+    alert('pas implémenté');
   }
 
   public debug() {

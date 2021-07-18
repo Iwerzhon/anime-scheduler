@@ -1,4 +1,3 @@
-
 <div class="login-page">
   <mat-card class="login-container">
     <h1>Login</h1>
@@ -8,13 +7,16 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </mat-form-field>
-    <button (click)="login()" mat-raised-button color="basic" class="google-button">
+    <button (click)="loginEmail()" mat-raised-button color="primary" class="login-button">Login</button>
+    <button (click)="loginGoogle()" mat-raised-button color="basic" class="google-button">
       <img style="width: 50px; height:30px" src="assets/img/Google.svg">
       <span>Login With Google</span>
     </button>
-    <button mat-raised-button color="primary" class="login-button">Login</button>
     <a mat-button (click)="forgotPassword()">Forgot password?</a>
     <a href="/signup" class="link signup">
       Not registered?

@@ -36,7 +36,7 @@ export class FirebaseService {
   }
 
   // google authentication
-  public login() {
+  public loginGoogle() {
     this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then((result) => {
       this.ngZone.run(() => {
@@ -53,6 +53,14 @@ export class FirebaseService {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
     });
+  }
+
+  public signUpGoogle() {
+
+  }
+
+  public signUpEmail() {
+
   }
 
   public setUserData(user: any) {
