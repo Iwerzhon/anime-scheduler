@@ -1,9 +1,5 @@
 @import 'variables';
 
-::ng-deep body {
-    background-color: $color-brown-light-primary;
-}
-
 .login-page {
     height: 100vh;
     display: flex;
