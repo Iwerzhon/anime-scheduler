@@ -1,3 +1,24 @@
-<p>Please login.</p>
-<button (click)="login()">Login with Google</button>
-<button (click)="debug()">Debug</button>
+
+<div class="login-page">
+  <mat-card class="login-container">
+    <h1>Login</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button (click)="login()" mat-raised-button color="basic" class="google-button">
+      <img style="width: 50px; height:30px" src="assets/img/Google.svg">
+      <span>Login With Google</span>
+    </button>
+    <button mat-raised-button color="primary" class="login-button">Login</button>
+    <a mat-button (click)="forgotPassword()">Forgot password?</a>
+    <a href="/signup" class="link signup">
+      Not registered?
+      <span>Create an account</span>
+    </a>
+  </mat-card>
+</div>

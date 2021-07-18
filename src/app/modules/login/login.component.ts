@@ -11,8 +11,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _firebaseAuthService: FirebaseService,
-    private _router: Router
-  ) { }
+    private _router: Router,
+  ) {
+  }
 
   ngOnInit(): void {
     if (this._firebaseAuthService.isLoggedIn) {
@@ -26,5 +27,9 @@ export class LoginComponent implements OnInit {
 
   public debug() {
     this._firebaseAuthService.debug();
+  }
+
+  public forgotPassword() {
+    alert('rekt');
   }
 }
