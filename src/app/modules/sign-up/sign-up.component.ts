@@ -10,8 +10,10 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
   hide = true;
-  username = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.required, Validators.email]);
+  username = '';
+  usernameControl = new FormControl('', [Validators.required]);
+  email = '';
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(
     private _firebaseAuthService: FirebaseService,
@@ -25,30 +27,35 @@ export class SignUpComponent implements OnInit {
   }
 
   getErrorUsername() {
-    console.log('bob', this.username, this.username.invalid);
-    console.log(this.username.hasError('required') ? 'You must enter a value' : '');
-    return this.username.hasError('required') ? 'You must enter a value' : '';
+    return this.usernameControl.hasError('required') ? 'You must enter a value' : '';
   }
 
   getErrorEmail() {
-    if (this.email.hasError('required')) {
+    if (this.emailControl.hasError('required')) {
       return 'You must enter a value';
     }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return this.emailControl.hasError('email') ? 'Not a valid email' : '';
   }
 
   signUpGoogle() {
-    // check if username is set
-    // check if username is not already taken
-    // proceed to signUp
-    this._firebaseAuthService.signUpGoogle();
+    console.log('this.username', this.username);
+    if (!this.username || this.usernameControl.hasError('required')) {
+      console.error('username is missing');
+      // to replace with form error trigger
+      alert('please set a username even if you log in using Google');
+    } else {
+      // check if username is not already taken
+
+      // proceed to signUp
+      this._firebaseAuthService.signUpGoogle(this.username);
+    }
+
   }
 
   signUpEmail() {
     // check if fields are ok (add FormControl)
     // check if username is not already taken
     // proceed to signUp
-    this._firebaseAuthService.signUpEmail();
   }
 }

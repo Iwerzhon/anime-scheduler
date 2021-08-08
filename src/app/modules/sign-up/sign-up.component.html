@@ -3,13 +3,13 @@
       <h1>Sign up</h1>
       <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>
-        <input matInput [formControl]="username" required>
-        <mat-error *ngIf="username.invalid">{{getErrorUsername()}}</mat-error>
+        <input matInput [formControl]="usernameControl" [(ngModel)]="username" required>
+        <mat-error *ngIf="usernameControl.invalid">{{getErrorUsername()}}</mat-error>
       </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorEmail()}}</mat-error>
+        <input matInput placeholder="pat@example.com" [formControl]="emailControl" [(ngModel)]="email" required>
+        <mat-error *ngIf="emailControl.invalid">{{getErrorEmail()}}</mat-error>
     </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
