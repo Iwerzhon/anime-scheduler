@@ -1,0 +1,37 @@
+<div class="login-page">
+    <mat-card class="login-container">
+      <h1>Sign up</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput [formControl]="usernameControl" [(ngModel)]="username" required>
+        <mat-error *ngIf="usernameControl.invalid">{{getErrorUsername()}}</mat-error>
+      </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="emailControl" [(ngModel)]="email" required>
+        <mat-error *ngIf="emailControl.invalid">{{getErrorEmail()}}</mat-error>
+    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button (click)="signUpEmail()" mat-raised-button color="primary" class="login-button">Sign up</button>
+      <button (click)="signUpGoogle()" mat-raised-button color="basic" class="google-button">
+        <img style="width: 50px; height:30px" src="assets/img/Google.svg">
+        <span>Signup With Google</span>
+      </button>
+      <a href="/login" class="link login">
+        <span>Login</span>
+      </a>
+    </mat-card>
+  </div>

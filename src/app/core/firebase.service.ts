@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 export class FirebaseService {
 
   public userData: any;
-  public redirectUrl: any = '';
+  public username: string | undefined;
+  public redirectUrl: string | undefined;
 
   constructor(
     public afs: AngularFirestore,
@@ -35,9 +36,16 @@ export class FirebaseService {
     })
   }
 
-  // google authentication
-  public login() {
-    this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  loginGoogle() {
+    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
+  }  
+
+  public setUsername(username: string | undefined) {
+    this.username = username;
+  }
+
+  public AuthLogin(provider: firebase.auth.GoogleAuthProvider) {
+    return this.afAuth.signInWithPopup(provider)
     .then((result) => {
       this.ngZone.run(() => {
         this.router.navigate(['schedule']);
@@ -55,6 +63,21 @@ export class FirebaseService {
     });
   }
 
+  public signUpGoogle(username: string | undefined) {
+    if (username) {
+      this.setUsername(username);
+      return this.loginGoogle();
+    } else {
+      console.log('missing username');
+      throw Error("missing username");
+    }
+  }
+
+  public signUpEmail(email: string, password: string) {
+    // 
+  }
+
+
   public setUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     // TODO def model User
@@ -63,7 +86,14 @@ export class FirebaseService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+    }
+
+    if (this.username) {
+      console.log(`adding username ${this.username} in database upon signUp`)
+      userData.username = this.username;
+    } else {
+      console.log('debug: username not set when calling setUserData (ok if login, ko if signup');
     }
     return userRef.set(userData, {
       merge: true

@@ -1,0 +1,57 @@
+// Default
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+// Teal - BlueGrey palette (https://www.materialpalette.com/pink/blue-grey)
+$color-dark-primary: #00796B;
+$color-light-primary: #B2DFDB;
+$color-primary: #009688;
+$color-text-icons: $color-white;
+$color-accent: #607D8B;
+$color-primary-text: #212121;
+$color-secondary-text: #757575;
+$color-divider: #BDBDBD;
+$color-basic: #424242;
+
+// Material specific
+$color-warn: #f44336;
+
+$color-teal-tint-1: #1AA194;
+$color-teal-tint-2: #33ABA0;
+$color-teal-tint-3: #4DB6AC;
+$color-teal-tint-4: #66C0B8;
+$color-teal-tint-5: #80CBC4;
+$color-teal-tint-6: #99D5CF;
+$color-teal-tint-7: #B3E0DB;
+$color-teal-tint-8: #CCEAE7;
+$color-teal-tint-9: #E6F5F3;
+
+$color-teal-tone-1: #0D9487;
+$color-teal-tone-2: #1A9286;
+$color-teal-tone-3: #268F86;
+$color-teal-tone-4: #338D85;
+$color-teal-tone-5: #408B84;
+$color-teal-tone-6: #4D8983;
+$color-teal-tone-7: #5A8782;
+$color-teal-tone-8: #668482;
+$color-teal-tone-9: #738281;
+
+$color-teal-shade-1: #00877A;
+$color-teal-shade-2: #00786D;
+$color-teal-shade-3: #00695F;
+$color-teal-shade-4: #005A52;
+$color-teal-shade-5: #004B44;
+$color-teal-shade-6: #003C36;
+$color-teal-shade-7: #002D29;
+$color-teal-shade-8: #001E1B;
+$color-teal-shade-9: #000F0E;
+
+// Custom
+$color-brown-primary: #795548;
+$color-brown-dark-primary: #5D4037;
+$color-brown-light-primary: #D7CCC8;
+$color-very-dark-primary: #0B5D51;
+
+$color-dark-background: $color-teal-tone-6;
+$color-background: $color-teal-tone-8;
+$color-light-background: $color-teal-tint-7;
